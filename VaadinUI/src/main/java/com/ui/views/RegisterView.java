@@ -8,18 +8,14 @@ import com.vaadin.data.Binder.Binding;
 import com.vaadin.data.BindingValidationStatus;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener;
-import com.vaadin.server.Page;
-import com.vaadin.shared.Position;
 import com.vaadin.spring.annotation.SpringView;
 import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-
 import javax.annotation.PostConstruct;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @SpringView(name = RegisterView.VIEW_NAME)
@@ -38,7 +34,6 @@ public class RegisterView extends VerticalLayout implements View {
     void init() {
         setMargin(true);
         setSpacing(true);
-
         registerForm();
     }
 

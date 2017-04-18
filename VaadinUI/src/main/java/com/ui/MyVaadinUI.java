@@ -5,6 +5,8 @@ import com.ui.views.LoginView;
 import com.ui.views.RegisterView;
 import com.vaadin.annotations.Theme;
 import com.vaadin.navigator.Navigator;
+import com.vaadin.server.Resource;
+import com.vaadin.server.ThemeResource;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
 import com.vaadin.spring.navigator.SpringViewProvider;
@@ -34,17 +36,23 @@ public class MyVaadinUI extends UI {
 
     private void setBasicLayout() {
         root.setSizeFull();
+        root.addStyleName("mystyle");
         root.setMargin(true);
         root.setSpacing(true);
         setContent(root);
     }
 
     private void createHeaderLayout() {
+        HorizontalLayout headerLayout = new HorizontalLayout();
         Label header = new Label("Survey Creator");
+        Button userButton = new Button();
+        userButton.setIcon(new ThemeResource("src/main/resources/images/user.png"));
         header.setStyleName(ValoTheme.LABEL_H1);
 
         root.setDefaultComponentAlignment(Alignment.MIDDLE_CENTER);
-        root.addComponent(header);
+
+        root.addComponent(headerLayout);
+        headerLayout.addComponents(header,userButton);
     }
 
     private void createMenuBarLayout() {
